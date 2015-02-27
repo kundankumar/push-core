@@ -17,7 +17,8 @@ module Push
           configurations.each_with_index do |config, i|
             p "============================"
             p config.class
-            next if i == 0
+            # uncomment below for skipping apple configuration, causing (OpenSSL::SSL::SSLError)
+            # next if i == 0
             if @apps[config.app] == nil
               @apps[config.app] = App.new(config.app)
             end
